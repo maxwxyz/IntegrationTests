@@ -1,6 +1,8 @@
+[![Integration Test Suite](https://github.com/chennes/IntegrationTests/actions/workflows/run_integration_tests.yml/badge.svg)](https://github.com/chennes/IntegrationTests/actions/workflows/run_integration_tests.yml)
+
 # FreeCAD Integration Test Suite
 
-A collection of FreeCAD files with known baseline results that can be automatically tested against a local copy of FreeCAD to evaluate it.
+A collection of FreeCAD files with known baseline results that can be automatically tested against a local copy of FreeCAD to evaluate it. Runs via a GitHub action once per day to evaluate https://github.com/FreeCAD/FreeCAD (main branch only).
 
 ## Running manually
 
