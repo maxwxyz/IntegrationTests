@@ -51,6 +51,7 @@ def compute_metrics_for_solid(solid) -> dict:
     Future expansion point: add additional fields here (e.g., area_mm2, mass_g, etc).
     """
     return {
+        "is_valid": solid.isValid(),  # False when recompute fails
         "volume_mm3": float(solid.Volume),
         "bounding_box": {
             "x_min": float(solid.BoundBox.XMin),

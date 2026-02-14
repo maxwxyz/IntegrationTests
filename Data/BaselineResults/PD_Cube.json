@@ -7,6 +7,7 @@
         {
           "index": 1,
           "metrics": {
+            "is_valid": true,
             "volume_mm3": 8000.000000000
           }
         }
@@ -20,6 +21,7 @@
         {
           "index": 1,
           "metrics": {
+            "is_valid": true,
             "volume_mm3": 8000.000000000
           }
         }

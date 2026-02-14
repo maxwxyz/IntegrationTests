@@ -33,7 +33,8 @@ Usage:
     --fcstd-dir /path/to/fcstds \
     --baseline-dir /path/to/baselines \
     --match-pct 99.999 \
-    --abs-tol-mm3 1e-9
+    --abs-tol-mm3 1e-9 \
+    --filename model.FCStd
 
 Exit codes:
   0 = all comparisons within tolerance
@@ -53,7 +54,6 @@ import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Tuple, List, Any, Optional
-
 
 SolidKey = Tuple[str, int]  # (object_name, index)
 
@@ -111,6 +111,9 @@ def parse_args(argv: List[str]) -> argparse.Namespace:
         "--verbose",
         action="store_true",
         help="Print per-file diffs (otherwise only summary + failures)",
+    )
+    p.add_argument(
+        "--filename", required=False, help="Individual file to test (FCStd name only, not path)"
     )
     return p.parse_args(argv)
 
@@ -321,6 +324,10 @@ def find_fcstd_files(root: Path, recursive: bool) -> List[Path]:
     return sorted([p for p in root.glob("*.FCStd") if p.is_file()])
 
 
+def scan_for_invalid():
+    pass
+
+
 def main(argv: List[str]) -> int:
     args = parse_args(argv)
 
@@ -328,6 +335,12 @@ def main(argv: List[str]) -> int:
     script_path = Path(args.script)
     fcstd_dir = Path(args.fcstd_dir)
     baseline_dir = Path(args.baseline_dir)
+    single_test_to_run = None
+    if args.filename:
+        single_test_to_run = fcstd_dir / args.filename
+        if not single_test_to_run.exists():
+            print(f"ERROR: File does not exist: {single_test_to_run}", file=sys.stderr)
+            return 3
 
     for p in (freecad_exe, script_path, fcstd_dir, baseline_dir):
         if not p.exists():
@@ -347,6 +360,8 @@ def main(argv: List[str]) -> int:
     error_files = 0
 
     for fcstd_path in fcstd_files:
+        if single_test_to_run and fcstd_path != single_test_to_run:
+            continue
         total_files += 1
         stem = fcstd_path.stem
         baseline_path = baseline_dir / f"{stem}.json"
@@ -375,9 +390,19 @@ def main(argv: List[str]) -> int:
                 mismatch_files += 1
                 print(f"[FAIL] {fcstd_path.name}: {len(bad)} issue(s)")
                 for d in bad:
-                    if d.reason in ("missing_in_baseline", "missing_in_new"):
-                        print(f"  - {d.reason}: {d.key}")
-                    else:
+                    if d.reason == "missing_in_baseline":
+                        print(
+                            f"  - Feature exists in newly-recomputed file, but not in baseline: {d.key[0]}"
+                        )
+                    elif d.reason == "missing_in_new":
+                        print(
+                            f"  - Feature exists in baseline, but not in newly-recomputed file: {d.key[0]}"
+                        )
+                    elif "is_valid" in d.reason and d.new == False:
+                        # Special handling: this indicates a recomputation failure
+                        print(f"  - Recomputation of {d.key[0]} failed")
+                    elif d.rel_err != 0.0:
+                        # For floating point comparisons report the calculated error metrics
                         rel_pct = (
                             (d.rel_err * 100.0)
                             if (d.rel_err is not None and math.isfinite(d.rel_err))
@@ -388,6 +413,8 @@ def main(argv: List[str]) -> int:
                             f"  - {d.reason} {d.key}: baseline={d.baseline:.12g} new={d.new:.12g} "
                             f"rel_err={rel_str} (required match >= {cfg.match_pct}%)"
                         )
+                    else:
+                        print(f"  - {d.reason} {d.key}: baseline={d.baseline} new={d.new}")
                 if args.verbose:
                     print(
                         f"  solids compared: {len(diffs)} (ok={len(diffs)-len(bad)} bad={len(bad)})"
