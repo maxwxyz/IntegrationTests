@@ -97,12 +97,6 @@ def build_report_dict(doc, source_path: str) -> dict:
             continue
 
         shape = obj.Shape
-        if not is_shape_valid(shape):
-            continue
-
-        solids = get_solids_from_shape(shape)
-        if not solids:
-            continue
 
         obj_entry = {
             "name": obj.Name,
@@ -111,8 +105,31 @@ def build_report_dict(doc, source_path: str) -> dict:
             "solids": [],
         }
 
+        if not obj.isValid() or not is_shape_valid(shape):
+            entry = {
+                "index": 1,
+                "metrics": {
+                    "is_valid": False
+                }
+            }
+            obj_entry["solids"].append(entry)
+            report["objects"][obj.Name] = obj_entry
+            continue
+
+        solids = get_solids_from_shape(shape)
+
+        if not solids:
+            continue
+
         for idx, solid in enumerate(solids, start=1):
             if not is_shape_valid(solid):
+                entry = {
+                    "index": idx,
+                    "metrics": {
+                        "is_valid": False
+                    }
+                }
+                obj_entry["solids"].append(entry)
                 continue
 
             try:

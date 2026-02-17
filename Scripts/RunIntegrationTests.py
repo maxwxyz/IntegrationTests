@@ -45,12 +45,14 @@ Exit codes:
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import math
 import os
 import subprocess
 import sys
 import tempfile
+import traceback
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Tuple, List, Any, Optional
@@ -296,7 +298,8 @@ def compare_individual_metrics(
     elif isinstance(baseline, dict):
         # Recursively descend into this dictionary
         results = []
-        for sub_metric in baseline.keys():
+        sub_metrics = baseline.keys() | new.keys()
+        for sub_metric in sub_metrics:
             if sub_metric not in new:
                 results.append(
                     SolidDiff(
@@ -308,6 +311,8 @@ def compare_individual_metrics(
                         reason=f"{metric}_{sub_metric}_missing_in_new",
                     )
                 )
+            elif sub_metric not in baseline:
+                print("  WARNING: baseline missing metric:", f"{metric}_{sub_metric}")
             else:
                 results.extend(
                     compare_individual_metrics(
@@ -359,6 +364,8 @@ def main(argv: List[str]) -> int:
     mismatch_files = 0
     error_files = 0
 
+    date_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
     for fcstd_path in fcstd_files:
         if single_test_to_run and fcstd_path != single_test_to_run:
             continue
@@ -398,8 +405,7 @@ def main(argv: List[str]) -> int:
                         print(
                             f"  - Feature exists in baseline, but not in newly-recomputed file: {d.key[0]}"
                         )
-                    elif "is_valid" in d.reason and d.new == False:
-                        # Special handling: this indicates a recomputation failure
+                    elif "is_valid" in d.new and not d.new["is_valid"]:
                         print(f"  - Recomputation of {d.key[0]} failed")
                     elif d.rel_err != 0.0:
                         # For floating point comparisons report the calculated error metrics
@@ -419,6 +425,10 @@ def main(argv: List[str]) -> int:
                     print(
                         f"  solids compared: {len(diffs)} (ok={len(diffs)-len(bad)} bad={len(bad)})"
                     )
+                new_report_file = Path.cwd() / date_str / f"{stem}_new.json"
+                os.makedirs(new_report_file.parent, exist_ok=True)
+                with open(new_report_file, "w", encoding="utf-8") as f:
+                    json.dump(new_report, f, indent=2)
             else:
                 ok_files += 1
                 if args.verbose:
@@ -430,6 +440,7 @@ def main(argv: List[str]) -> int:
         except Exception as e:
             error_files += 1
             print(f"[ERROR] {fcstd_path.name}: {e}", file=sys.stderr)
+            traceback.print_exception(type(e), e, e.__traceback__, file=sys.stderr)
 
     print("\n" + 35 * "=" + " Summary " + 35 * "=")
     print(f"Files checked: {total_files}")
