@@ -44,6 +44,19 @@
       ],
       "type_id": "PartDesign::Body"
     },
+    "Body002": {
+      "label": "Body",
+      "name": "Body002",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Body"
+    },
     "Body003": {
       "label": "Halter",
       "name": "Body003",
@@ -466,10 +479,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:30:10.995962+00:00",
+    "data_creation_date": "2026-02-22T16:13:58.958850+00:00",
     "document_label": "PD_SlicerStand",
     "document_name": "PD_SlicerStand",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_SlicerStand.FCStd"
   },
   "summary": {

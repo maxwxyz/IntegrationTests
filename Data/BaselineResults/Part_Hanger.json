@@ -1,5 +1,18 @@
 {
   "objects": {
+    "Body": {
+      "label": "Body",
+      "name": "Body",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Body"
+    },
     "Fillet002": {
       "label": "Fillet002",
       "name": "Fillet002",
@@ -113,10 +126,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:23:15.789762+00:00",
+    "data_creation_date": "2026-02-22T16:22:23.107121+00:00",
     "document_label": "Part_Hanger",
     "document_name": "Part_Hanger",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\Part_Hanger.FCStd"
   },
   "summary": {

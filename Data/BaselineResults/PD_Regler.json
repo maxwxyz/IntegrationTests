@@ -110,6 +110,19 @@
       ],
       "type_id": "PartDesign::Body"
     },
+    "Body005": {
+      "label": "Drehknopf_Eigenmodell",
+      "name": "Body005",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Body"
+    },
     "Body006": {
       "label": "Teller001",
       "name": "Body006",
@@ -550,6 +563,19 @@
       ],
       "type_id": "PartDesign::Fillet"
     },
+    "Fillet004": {
+      "label": "Fillet004",
+      "name": "Fillet004",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Fillet"
+    },
     "Groove": {
       "label": "Groove",
       "name": "Groove",
@@ -633,6 +659,19 @@
             },
             "is_valid": true,
             "volume_mm3": 740.2795192709854
+          }
+        }
+      ],
+      "type_id": "PartDesign::Groove"
+    },
+    "Groove004": {
+      "label": "Abdrehen_Bohrung D9,5",
+      "name": "Groove004",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
           }
         }
       ],
@@ -1411,10 +1450,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:16:08.375064+00:00",
+    "data_creation_date": "2026-02-22T16:07:08.443549+00:00",
     "document_label": "PD_Regler",
     "document_name": "PD_Regler",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_Regler.FCStd"
   },
   "summary": {

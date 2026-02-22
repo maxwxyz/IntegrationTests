@@ -979,10 +979,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T18:37:46.156827+00:00",
+    "data_creation_date": "2026-02-22T15:50:14.378295+00:00",
     "document_label": "AssemblyExample",
     "document_name": "AssemblyExample",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\AssemblyExample.FCStd"
   },
   "summary": {

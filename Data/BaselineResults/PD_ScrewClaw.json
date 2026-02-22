@@ -619,10 +619,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:32:45.066970+00:00",
+    "data_creation_date": "2026-02-22T16:13:23.328461+00:00",
     "document_label": "PD_ScrewClaw",
     "document_name": "PD_ScrewClaw",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_ScrewClaw.FCStd"
   },
   "summary": {
