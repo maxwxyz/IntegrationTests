@@ -685,10 +685,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:20:04.924066+00:00",
+    "data_creation_date": "2026-02-22T16:18:20.098054+00:00",
     "document_label": "PD_TubeCover",
     "document_name": "PD_TubeCover",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_TubeCover.FCStd"
   },
   "summary": {

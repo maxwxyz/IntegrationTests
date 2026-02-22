@@ -1,5 +1,31 @@
 {
   "objects": {
+    "Body": {
+      "label": "Body",
+      "name": "Body",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Body"
+    },
+    "Body_child0": {
+      "label": "Halter",
+      "name": "Body_child0",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "Part::FeaturePython"
+    },
     "Body_child1": {
       "label": "Klemme",
       "name": "Body_child1",
@@ -102,6 +128,45 @@
         }
       ],
       "type_id": "PartDesign::Fillet"
+    },
+    "Fillet002": {
+      "label": "Fillet002",
+      "name": "Fillet002",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Fillet"
+    },
+    "Fillet003": {
+      "label": "Fillet003",
+      "name": "Fillet003",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Fillet"
+    },
+    "GrExplode_Body": {
+      "label": "Exploded Body",
+      "name": "GrExplode_Body",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "App::DocumentObjectGroup"
     },
     "Hole": {
       "label": "Hole",
@@ -407,10 +472,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:25:44.456919+00:00",
+    "data_creation_date": "2026-02-22T16:04:33.700538+00:00",
     "document_label": "PD_PipeClamp",
     "document_name": "PD_PipeClamp",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_PipeClamp.FCStd"
   },
   "summary": {

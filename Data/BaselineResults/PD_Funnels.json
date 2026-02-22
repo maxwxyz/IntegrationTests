@@ -157,10 +157,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:31:13.456798+00:00",
+    "data_creation_date": "2026-02-22T16:03:49.312128+00:00",
     "document_label": "PD_Funnels",
     "document_name": "PD_Funnels",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_Funnels.FCStd"
   },
   "summary": {

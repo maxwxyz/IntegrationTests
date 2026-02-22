@@ -16,7 +16,7 @@
               "z_min": -7.854480845993747
             },
             "is_valid": true,
-            "volume_mm3": 2237.7513298488025
+            "volume_mm3": 2237.751329848677
           }
         }
       ],
@@ -110,6 +110,19 @@
       ],
       "type_id": "PartDesign::Body"
     },
+    "Body005": {
+      "label": "Drehknopf_Eigenmodell",
+      "name": "Body005",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Body"
+    },
     "Body006": {
       "label": "Teller001",
       "name": "Body006",
@@ -170,7 +183,7 @@
               "z_min": -7.499999999994423
             },
             "is_valid": true,
-            "volume_mm3": 1365.250676504591
+            "volume_mm3": 1365.2506765044025
           }
         }
       ],
@@ -192,7 +205,7 @@
               "z_min": -7.5
             },
             "is_valid": true,
-            "volume_mm3": 2237.7035990205595
+            "volume_mm3": 2237.703599020407
           }
         }
       ],
@@ -241,6 +254,32 @@
         }
       ],
       "type_id": "PartDesign::Boolean"
+    },
+    "Chamfer": {
+      "label": "Chamfer",
+      "name": "Chamfer",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Chamfer"
+    },
+    "Chamfer001": {
+      "label": "Chamfer001",
+      "name": "Chamfer001",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Chamfer"
     },
     "Chamfer002": {
       "label": "Chamfer002",
@@ -368,7 +407,7 @@
               "z_min": -0.8000000000000032
             },
             "is_valid": true,
-            "volume_mm3": 711.4615853136984
+            "volume_mm3": 711.4615853136983
           }
         }
       ],
@@ -412,7 +451,7 @@
               "z_min": -0.8000000000000032
             },
             "is_valid": true,
-            "volume_mm3": 683.5443471851372
+            "volume_mm3": 683.5443471851377
           }
         }
       ],
@@ -434,7 +473,20 @@
               "z_min": -7.854480845993747
             },
             "is_valid": true,
-            "volume_mm3": 2237.7513157609033
+            "volume_mm3": 2237.7513157607777
+          }
+        }
+      ],
+      "type_id": "PartDesign::Fillet"
+    },
+    "Fillet001": {
+      "label": "Fillet001",
+      "name": "Fillet001",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
           }
         }
       ],
@@ -447,16 +499,7 @@
         {
           "index": 1,
           "metrics": {
-            "bounding_box": {
-              "x_max": 6.5,
-              "x_min": -7.440899969780406,
-              "y_max": 6.5,
-              "y_min": -6.5,
-              "z_max": 15.000000000000004,
-              "z_min": -0.8000000000000036
-            },
-            "is_valid": true,
-            "volume_mm3": 700.6077618442475
+            "is_valid": false
           }
         }
       ],
@@ -469,16 +512,20 @@
         {
           "index": 1,
           "metrics": {
-            "bounding_box": {
-              "x_max": 6.5,
-              "x_min": -7.5,
-              "y_max": 6.5,
-              "y_min": -6.500000000000001,
-              "z_max": 15.000000000000005,
-              "z_min": -0.800000000000006
-            },
-            "is_valid": true,
-            "volume_mm3": 686.8835030531926
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "PartDesign::Fillet"
+    },
+    "Fillet004": {
+      "label": "Fillet004",
+      "name": "Fillet004",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
           }
         }
       ],
@@ -567,6 +614,19 @@
             },
             "is_valid": true,
             "volume_mm3": 740.2795192709854
+          }
+        }
+      ],
+      "type_id": "PartDesign::Groove"
+    },
+    "Groove004": {
+      "label": "Abdrehen_Bohrung D9,5",
+      "name": "Groove004",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
           }
         }
       ],
@@ -720,7 +780,7 @@
               "z_min": -0.8000000000000022
             },
             "is_valid": true,
-            "volume_mm3": 872.4003414657076
+            "volume_mm3": 872.4003414657077
           }
         }
       ],
@@ -853,6 +913,19 @@
             },
             "is_valid": true,
             "volume_mm3": 731.9100931981347
+          }
+        }
+      ],
+      "type_id": "PartDesign::Pocket"
+    },
+    "Pocket003": {
+      "label": "Pocket003",
+      "name": "Pocket003",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
           }
         }
       ],
@@ -1116,7 +1189,7 @@
               "z_min": -7.499999999994423
             },
             "is_valid": true,
-            "volume_mm3": 1491.6323734902046
+            "volume_mm3": 1491.6323734901182
           }
         }
       ],
@@ -1292,7 +1365,7 @@
               "z_min": -7.499999999994423
             },
             "is_valid": true,
-            "volume_mm3": 736.7573553384244
+            "volume_mm3": 736.7573553383356
           }
         }
       ],
@@ -1323,14 +1396,14 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T18:40:18.701394+00:00",
-    "document_label": "test",
-    "document_name": "test",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
-    "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\test.FCStd"
+    "data_creation_date": "2026-02-22T16:10:48.163947+00:00",
+    "document_label": "PD_Regler_1.1_fails_recompute",
+    "document_name": "PD_Regler_1_1_fails_recompute",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
+    "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_Regler_1.1_fails_recompute.FCStd"
   },
   "summary": {
-    "solid_count": 60,
-    "total_volume_mm3": 65139.34848107599
+    "solid_count": 58,
+    "total_volume_mm3": 63751.85721617778
   }
 }

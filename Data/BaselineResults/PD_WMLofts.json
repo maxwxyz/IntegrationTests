@@ -267,10 +267,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T17:31:55.865725+00:00",
+    "data_creation_date": "2026-02-22T16:20:16.312097+00:00",
     "document_label": "PD_WMLofts",
     "document_name": "PD_WMLofts",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\PD_WMLofts.FCStd"
   },
   "summary": {

@@ -2947,6 +2947,45 @@
       ],
       "type_id": "App::GeometryPython"
     },
+    "Group001": {
+      "label": "Annotations",
+      "name": "Group001",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "App::DocumentObjectGroup"
+    },
+    "Group002": {
+      "label": "Section elements",
+      "name": "Group002",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "App::DocumentObjectGroup"
+    },
+    "Shape2DView002": {
+      "label": "Cutlines",
+      "name": "Shape2DView002",
+      "solids": [
+        {
+          "index": 1,
+          "metrics": {
+            "is_valid": false
+          }
+        }
+      ],
+      "type_id": "Part::Part2DObjectPython"
+    },
     "Structure": {
       "label": "Blocking003",
       "name": "Structure",
@@ -6852,10 +6891,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T18:36:34.431575+00:00",
+    "data_creation_date": "2026-02-22T15:45:06.939838+00:00",
     "document_label": "ArchDetail",
     "document_name": "ArchDetail",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\ArchDetail.FCStd"
   },
   "summary": {

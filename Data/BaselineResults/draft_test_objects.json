@@ -143,10 +143,10 @@
   },
   "schema_version": 1,
   "source": {
-    "data_creation_date": "2026-02-12T18:39:00.614000+00:00",
+    "data_creation_date": "2026-02-22T15:54:15.887683+00:00",
     "document_label": "draft_test_objects",
     "document_name": "draft_test_objects",
-    "freecad_version": "1.2.0 20260210 (Git shallow)",
+    "freecad_version": "1.2.0 20260217 (Git shallow)",
     "path": "C:\\Users\\max\\Dev\\IntegrationTests\\Data\\CADFiles\\draft_test_objects.FCStd"
   },
   "summary": {
